@@ -1,0 +1,23 @@
+total 192
+-rw-r--r--  1 jmo  staff    355 Apr  5 16:28 Makefile
+drwxr-xr-x  5 jmo  staff    160 Apr  5 16:32 Project6
+-rw-r--r--  1 jmo  staff   2421 Apr  5 16:28 Project6.zip
+-rwxr-xr-x  1 jmo  staff  14392 Apr 11 19:32 a.out
+-rw-r--r--  1 jmo  staff     24 Apr  5 16:28 banana
+-rw-r--r--  1 jmo  staff      0 Apr  5 16:28 cases.txt
+-rw-r--r--  1 jmo  staff      0 Apr  5 16:28 eature.out
+-rw-r--r--  1 jmo  staff    355 Apr  5 16:28 feature.out
+-rw-r--r--  1 jmo  staff      0 Apr  5 16:28 feature.txt
+-rw-r--r--  1 jmo  staff      0 Apr  5 16:28 ls
+-rw-r--r--  1 jmo  staff      0 Apr 11 19:33 ouput.txt
+-rw-r--r--  1 jmo  staff    203 Apr 11 14:28 out.txt
+-rw-r--r--  1 jmo  staff    203 Apr 11 19:32 output.txt
+-rw-r--r--@ 1 jmo  staff   1635 Apr 11 19:32 pipeline.c
+-rw-r--r--  1 jmo  staff    328 Apr  5 16:28 pipeline.h
+-rw-r--r--  1 jmo  staff   2776 Apr  5 16:28 pipeline.o
+-rwxr-xr-x  1 jmo  staff  13440 Apr  5 16:28 randomChild
+-rw-r--r--@ 1 jmo  staff   7277 Apr 11 19:31 shell.c
+-rw-r--r--  1 jmo  staff   8424 Apr  5 16:28 shell.o
+-rw-r--r--  1 jmo  staff    474 Apr  5 16:28 test.expect
+-rw-r--r--  1 jmo  staff    203 Apr 11 19:18 test.out
+drwxr-xr-x  6 jmo  staff    192 Apr  5 16:28 testFiles

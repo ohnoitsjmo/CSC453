@@ -1,0 +1,6 @@
+./a.out
+//home/kmammen/357/Project6/cshell
+
+< testFiles/coreTests.in
+< testFiles/featureTests.in
+< testFiles/randomTests.in

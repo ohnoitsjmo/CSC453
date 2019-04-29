@@ -1,0 +1,83 @@
+ls
+ls -a -GFh
+./randomChild -c 100000 | uniq -c | head -10 | wc
+exit
+
+wc -c < cases.txt
+< cases.txt wc -c
+wc < cases.txt -c
+
+wc < cases.txt
+< cases.txt wc
+
+ls -a > feature.out
+cat feature.out
+> feature.out ls -a
+cat feature.out
+ls > feature.out -a
+cat feature.out
+
+ls > feature.out
+cat feature.out
+> feature.out ls
+cat feature.out
+
+wc -c < cases.txt > feature.out
+cat feature.out
+wc -c > feature.out > cases.txt
+cat feature.out
+< cases.txt > feature.out wc -c
+cat feature.out
+> feature.out < cases.txt wc -c
+cat feature.out
+< cases.txt wc -c > feature.out
+cat feature.out
+> feature.out wc -c < cases.txt
+cat feature.out
+
+wc < cases.txt > feature.out
+cat feature.out
+wc > feature.out > cases.txt
+cat feature.out
+< cases.txt > feature.out wc
+cat feature.out
+> feature.out < cases.txt wc
+cat feature.out
+< cases.txt wc > feature.out
+cat feature.out
+> feature.out wc < cases.txt
+cat feature.out
+
+wc < cases.txt < feature.out < cases.txt
+< cases.txt wc < feature.out < cases.txt
+< cases.txt < feature.out < cases.txt wc
+
+ls > feature.out > feature1.out > feature2.out
+cat feature.out
+cat feature1.out
+cat feature2.out
+> feature.out > feature1.out > feature2.out ls
+cat feature.out
+cat feature1.out
+cat feature2.out
+> feature.out ls > feature1.out > feature2.out
+cat feature.out
+cat feature1.out
+cat feature2.out
+
+ls | wc < cases.txt | uniq -c
+ls > feature.out | wc > feature.out | uniq -c
+cat feature.out
+
+ls | | ls
+| ls | ls > ls
+wc < asldkfjlfjdasf.tfdsffsd
+wc > kmammen/357/Project6/cshell
+
+ls > >
+ls > |
+ls | >
+> | ls
+> ls |
+ls | |
+ls > > ls

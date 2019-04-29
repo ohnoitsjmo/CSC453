@@ -1,0 +1,44 @@
+:-) a.out
+banana
+cases.txt
+eature.out
+feature.out
+feature.txt
+ls
+Makefile
+output.txt
+pipeline.c
+pipeline.h
+pipeline.o
+Project6
+Project6.zip
+randomChild
+shell.c
+shell.o
+test.expect
+testFiles
+test.out
+:-) ./
+../
+a.out*
+banana
+cases.txt
+eature.out
+feature.out
+feature.txt
+ls
+Makefile
+output.txt
+pipeline.c
+pipeline.h
+pipeline.o
+Project6/
+Project6.zip
+randomChild*
+shell.c
+shell.o
+test.expect
+testFiles/
+test.out
+:-)      10      20     183
+randomChild: fprintf(stdout, ...):-) 

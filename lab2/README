@@ -1,0 +1,12 @@
+Name: Justin Mo
+How to run program: 
+**MacOS is necessary for compile**
+make <algorithm you want to use for scheduler>
+./<algorithm you want to use> <input.txt>
+For example, if you wanted to run the FCFS algorithm, you would type "make fcfs" and then run it with "./fcfs input.txt"
+Tests: 
+FCFS tested by making sure the tasks run in the order in which they are scheduled in input file.
+SJF tested by running tasks that have the shortest CPU burst.
+Priority tested by running tasks with the highest priorities first.
+RR tested by making sure each task is run for a QUANTUM amount of time -- if the remaining CPU burst is less than the QUANTUM then it will run for the remaining time and continue to the next task.
+Priority_RR runs highest priority first. The tasks that are tied in priority will run in RR fashion.

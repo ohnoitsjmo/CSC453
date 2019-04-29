@@ -1,0 +1,4 @@
+ls
+ls -a -GFh
+randomChild -c 100000 | uniq -c | wc
+exit
