@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <pthread.h> 
+#include <time.h>
 
 typedef struct {
   int *array;
@@ -37,18 +38,18 @@ void freeArray(Array *a) {
 Array global_array;
 Array sorted_array;
 
-int compare_func(const void * a, const void * b) 
+int compare_func(const void * a, const void * b) /* comparator for sorting algo */
 {
     return ( *(int*)a - *(int*)b );
 }
 
-void* sortingThreads(void* param) {
+void* sortingThreads(void* param) { /* sorting algorithm */
     Array * array_of_ints = (Array *)param;
     qsort(array_of_ints->array, array_of_ints->used, sizeof(int), compare_func);
     return NULL;
 }
 
-void* mergeSorted(void* param) {
+void* mergeSorted(void* param) { /* merging algorithm */
     Args * args = (Args *)param;
     Array first_sublist = args->arg1;
     Array second_sublist = args->arg2;
@@ -82,6 +83,10 @@ void* mergeSorted(void* param) {
 
 int main(int argc, char *argv[])
 {
+    struct timespec start, finish;
+    double elapsed;
+    clock_gettime(CLOCK_MONOTONIC, &start);
+
     FILE *file = fopen(argv[1],"r");
     int n;
     initArray(&global_array, 3000);
@@ -105,17 +110,25 @@ int main(int argc, char *argv[])
     first_sublist.used = global_array.used/2;
     memcpy(second_sublist.array, global_array.array + global_array.used/2, (global_array.used-global_array.used/2) * sizeof(int));
     second_sublist.used = global_array.used-global_array.used/2;
-    pthread_create(&threads[0], NULL, sortingThreads, (void *)&first_sublist); 
-    pthread_create(&threads[1], NULL, sortingThreads, (void *)&second_sublist); 
+    pthread_create(&threads[0], NULL, sortingThreads, (void *)&first_sublist); /* create first sorting thread */
+    pthread_create(&threads[1], NULL, sortingThreads, (void *)&second_sublist); /* create second sorting thread */
+    // sortingThreads((void *)&first_sublist); /* single thread implementation */
+    // sortingThreads((void *)&second_sublist); /* single thread implementation */
     args.arg1 = first_sublist;
     args.arg2 = second_sublist;
     pthread_join(threads[0], NULL); /* wait for first thread to terminate */
     pthread_join(threads[1], NULL); /* wait for second thread to terminate */
-    pthread_create(&threads[2], NULL, mergeSorted, (void *)&args);
-    FILE *output = fopen("output.txt", "ab+");
+    pthread_create(&threads[2], NULL, mergeSorted, (void *)&args); /* create third thread for merging */
+    // mergeSorted((void *)&args); /* single thread implementation */
+    FILE *output = fopen("output.txt", "ab+"); /* create/open output.txt file */
     pthread_join(threads[2], NULL); /* wait for third thread to terminate */
-    for (int i = 0; i < sorted_array.used; i++) {
+    for (int i = 0; i < sorted_array.used; i++) { /* iterate sorted array and output to output file */
         fprintf(output, "%d ", sorted_array.array[i]);
     }
+
+    clock_gettime(CLOCK_MONOTONIC, &finish);
+    elapsed = (finish.tv_sec - start.tv_sec);
+    elapsed += (finish.tv_nsec - start.tv_nsec) / 1000000000.0;
+    printf("Time elapsed: %f seconds\n", elapsed);
     exit(EXIT_SUCCESS); 
 }
