@@ -1,0 +1,10 @@
+Name: Justin Mo
+
+Instructions
+1) Compile code with '*.c'
+2) Run code with './a.out <input.txt>'
+3) Sorted array will be outputted to 'output.txt'
+
+Timings to sort 3,000,000 random integers (5 trials each)
+Single thread: 1.244698s, 1.253863s, 1.298754s, 1.249715s, 1.261759s
+Multi thread: 1.043411s, 1.057073s, 1.031453s, 1.038591s, 1.053761s 
