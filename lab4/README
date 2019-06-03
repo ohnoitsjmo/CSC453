@@ -1,0 +1,6 @@
+Name: Justin Mo
+
+Instructions:
+1) Compile code with 'cc *.c'
+2) Run code with './a.out <number of initial bytes>'
+3) Use as specified in specs
